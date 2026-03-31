@@ -4,18 +4,17 @@
 
 #include "Connection.h"
 
-Connection::Connection(std::any *object): object_(object) {
-}
+Connection::Connection(std::any* object): object_(object) {}
 
-std::shared_ptr<Connection> Connection::create_connection(std::any * object) {
+std::shared_ptr<Connection> Connection::create_connection(std::any* object) {
     return std::shared_ptr<Connection>(new Connection(object));
 }
 
-void Connection::set_object(std::any *object) {
+void Connection::set_object(std::any* object) {
     object_ = object;
 }
 
-std::any * Connection::get_object() {
+std::any* Connection::get_object() {
     return object_;
 }
 
